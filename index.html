@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>PRION_SYSTEM // GLOBAL_DATABASE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="custom-background"></div>
+<div class="vignette"></div>
+
+<div class="main-wrapper">
+    <header class="top-nav">
+        <div class="logo-wrapper">
+            <div class="logo-area">
+                <img src="images/my-logo.png" alt="Логотип" style="height: 40px; display: block;">
+            </div>
+            <div class="site-title">
+                <span class="main-name">PRION_INDEX</span>
+                <span class="sub-name">Global Research Database</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">ГЛАВНАЯ</a>
+            <a href="archive.html">АРХИВ РАБОТ</a>
+            <a href="strains.html">БАЗА ШТАММОВ</a>
+            <a href="/contacts/contacts.html">КОНТАКТЫ</a>
+        </div>
+        <div class="system-id">USER_ID: BSL4_RESEARCHER</div>
+    </header>
+
+    <div class="layout">
+        <aside class="wiki-nav">
+            <div class="search-container">
+                <input type="text" id="wiki-search" placeholder="ПОИСК ПО ВСЕЙ БАЗЕ...">
+                <div class="search-line"></div>
+            </div>
+		<div class="nav-section">
+            <h4>ОСНОВА</h4>
+	<a href="dis-prion/dis-prion.html">Прион — Что Это?</a>
+		</div>
+
+            <div class="nav-section">
+                <h4>РЕЕСТР ЗАБОЛЕВАНИЙ</h4>
+                <a href="dis-kuru/dis-kuru.html">Болезнь Куру</a>
+                <a href="dis-cjd/dis-cjd.html">Б-нь Крейтцфельдта — Якоба</a>
+
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <div class="alert-banner">Главная страница</div>
+                <h1>ПРИОННЫЕ ЗАБОЛЕВАНИЯ: МОЛЕКУЛЯРНАЯ УГРОЗА</h1>
+                
+                <div class="mission-statement">
+                    <p>Этот ресурс является крупнейшим агрегатором научных данных, посвященных изучению <strong>прионов</strong> — наиболее загадочных и опасных инфекционных агентов современности. На сайте собраны фундаментальные исследовательские работы, описывающие механизмы самовоспроизводящихся белковых структур, лишенных нуклеиновых кислот.</p>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-header">
+                        <span class="rec-dot"></span> FEED: MOLECULAR_SIMULATION_01
+                    </div>
+	<video autoplay muted loop playsinline poster="video-preview.jpg" id="terminalVideo">
+    	<source src="video.mp4" type="video/mp4">
+   	 Ваш браузер не поддерживает видео.
+	</video>
+                    <div class="video-footer">DATA_STREAM: [ENCRYPTED]</div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="text-block">
+                        <h3>Цель проекта</h3>
+
+                        <p>Систематизация знаний о патогенезе губчатых энцефалопатий, анализ современных методов дезактивации PrPSc и прогноз распространения зоонозных прионных инфекций.</p>
+                    </div>
+                    <div class="text-block highlight-red">
+                        <h3>Уровень опасности</h3>
+                        <p>Летальность прионных заболеваний составляет 100%. Эффективные методы лечения на данный момент отсутствуют.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="status-panel">
+            <div class="stat-box">
+                <label>ТЕКУЩИЙ ОБЪЕКТ:</label>
+                <div class="val">PrPSc (Scrapie)</div>
+            </div>
+            <div class="stat-box">
+                <label>ШТАММ:</label>
+                <div class="val">BSE_TYPE_C</div>
+            </div>
+            <div class="danger-indicator">
+                <div class="bar-fill"></div>
+                <span>BIOHAZARD_CRITICAL</span>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+    // СКРИПТ УМНОГО ПОИСКА
+    document.getElementById('wiki-search').addEventListener('keyup', function() {
+        let filter = this.value.toUpperCase();
+        let sections = document.querySelectorAll('.nav-section');
+        
+        sections.forEach(section => {
+            let links = section.querySelectorAll('a');
+            let hasVisibleLink = false;
+
+            links.forEach(link => {
+                if (link.innerText.toUpperCase().indexOf(filter) > -1) {
+                    link.style.display = "";
+                    hasVisibleLink = true;
+                } else {
+                    link.style.display = "none";
+                }
+            });
+            section.querySelector('h4').style.display = hasVisibleLink ? "" : "none";
+        });
+    });
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>

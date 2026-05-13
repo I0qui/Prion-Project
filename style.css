@@ -1,0 +1,958 @@
+:root {
+    --main-red: #b30000;
+    --dark-red: #5a0000;
+    --text-white: #e0e0e0;
+    --bg-overlay: rgba(10, 10, 10, 0.92);
+    --border-color: rgba(179, 0, 0, 0.3);
+    --mono-font: 'JetBrains Mono', monospace;
+}
+
+/* Настройка заднего фона */
+.custom-background {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* СЮДА ВСТАВЛЯЕШЬ СВОИ ОБОИ */
+    background: url('images/oboi.webp') no-repeat center center;
+    background-size: cover;
+    z-index: -2;
+}
+
+.vignette {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 20%, black 120%);
+    z-index: -1;
+}
+
+body {
+    margin: 0;
+    background: #000;
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Хедер с логотипом */
+.top-nav {
+    height: 70px;
+    background: var(--bg-overlay);
+    border-bottom: 2px solid var(--main-red);
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+
+.placeholder-logo {
+    font-family: var(--mono-font);
+    font-weight: bold;
+    color: var(--main-red);
+    border: 2px solid var(--main-red);
+    padding: 5px 15px;
+    letter-spacing: 2px;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 13px;
+    font-family: var(--mono-font);
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--main-red);
+    border-bottom: 1px solid var(--main-red);
+}
+
+/* Сетка */
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr 280px;
+    height: calc(100vh - 72px);
+}
+
+/* Навигация */
+.wiki-nav {
+    background: rgba(0, 0, 0, 0.8);
+    border-right: 1px solid var(--border-color);
+    padding: 30px 20px;
+}
+
+.nav-section h4 {
+    color: var(--main-red);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--dark-red);
+}
+
+.nav-section a {
+    display: block;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.nav-section a:hover { color: #fff; }
+
+/* Контент */
+.main-content {
+    background: var(--bg-overlay);
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.alert-banner {
+    background: var(--main-red);
+    color: white;
+    font-family: var(--mono-font);
+    padding: 5px 15px;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+
+.mission-statement {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 800px;
+    border-left: 4px solid var(--main-red);
+    padding-left: 25px;
+}
+
+/* Видео-контейнер */
+.video-container {
+    margin-top: 40px;
+    border: 1px solid var(--border-color);
+    background: #000;
+}
+
+.video-header {
+    background: #1a1a1a;
+    padding: 10px;
+    font-family: var(--mono-font);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.rec-dot {
+    width: 8px; height: 8px;
+    background: red;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+video { width: 100%; display: block; }
+
+.video-footer {
+    padding: 8px;
+    font-size: 10px;
+    color: #444;
+    text-align: right;
+    font-family: var(--mono-font);
+}
+
+.content-grid {
+    display: flex;         /* Включаем гибкие блоки */
+    gap: 20px;            /* Расстояние между блоками */
+    margin-top: 30px;
+    align-items: stretch; /* РЕШАЕТ ПРОБЛЕМУ: растягивает блоки по высоте самого высокого */
+}
+
+.text-block {
+    flex: 1;              /* РЕШАЕТ ПРОБЛЕМУ: делает блоки одинаковой ширины (50/50) */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Удаляем фиксированную высоту, если она была, пусть flex сам рулит */
+}
+
+.highlight-red {
+    border: 1px solid #ff4444;
+    background: rgba(255, 68, 68, 0.05);
+}
+
+/* Правая панель */
+.status-panel {
+    background: rgba(15, 0, 0, 0.9);
+    padding: 30px;
+}
+
+.stat-box { margin-bottom: 25px; }
+.stat-box label { font-size: 10px; color: var(--main-red); font-family: var(--mono-font); }
+.stat-box .val { font-size: 16px; font-weight: bold; margin-top: 5px; }
+
+.danger-indicator {
+    margin-top: 50px;
+    border: 1px solid var(--main-red);
+    height: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar-fill {
+    position: absolute;
+    top: 0; left: 0; height: 100%; width: 100%;
+    background: var(--main-red);
+    opacity: 0.3;
+}
+
+.danger-indicator span { font-family: var(--mono-font); font-size: 12px; z-index: 1; }
+
+/* Стилизация полосы прокрутки */
+::-webkit-scrollbar {
+    width: 4px; /* Ультра-тонкий */
+}
+
+/* Фон дорожки */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3); 
+}
+
+/* Сам ползунок (бегунок) */
+::-webkit-scrollbar-thumb {
+    background: var(--main-red);
+    border-radius: 0px;
+}
+
+/* Цвет при наведении */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bright-red);
+    box-shadow: 0 0 10px var(--main-red);
+}
+
+/* Выравнивание лого и названия */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Расстояние между картинкой и текстом */
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.main-name {
+    font-family: var(--mono-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.sub-name {
+    font-size: 9px;
+    color: var(--main-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--mono-font);
+}
+
+/* ПОИСКОВЫЙ БЛОК */
+.search-container {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#wiki-search {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--dark-red);
+    color: var(--text-white);
+    font-family: var(--mono-font);
+    font-size: 12px;
+    padding: 10px 0;
+    outline: none;
+    transition: 0.3s;
+}
+
+#wiki-search:focus {
+    border-bottom: 1px solid var(--main-red);
+}
+
+#wiki-search:focus + .search-line {
+    width: 100%;
+}
+
+.search-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--main-red);
+    transition: 0.5s;
+    box-shadow: 0 0 10px var(--main-red);
+}
+
+/* Выравнивание лого и названия */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.main-name {
+    font-family: var(--mono-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.sub-name {
+    font-size: 9px;
+    color: var(--main-red);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--mono-font);
+}
+
+/* Полное скрытие скроллбара */
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.main-content, .wiki-nav, .status-panel {
+    overflow-y: scroll;
+}
+
+/* Прозрачность контента для видимости обоев */
+.main-content {
+    background: rgba(10, 10, 10, 0.7); /* Прозрачность 70% */
+    backdrop-filter: blur(5px); /* Легкое размытие обоев под текстом */
+    padding: 0; /* Обнуляем, чтобы настроить внутренний контейнер */
+}
+
+.article-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.4); /* Еще один слой для читаемости текста */
+}
+
+/* Вики-Инфобокс (справа) */
+.infobox {
+    float: right;
+    width: 280px;
+    background: #000;
+    border: 1px solid var(--main-red);
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-family: var(--mono-font);
+}
+
+.infobox-title {
+    background: var(--main-red);
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.infobox-image {
+    height: 180px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: var(--dark-red);
+    font-size: 10px;
+}
+
+.infobox-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.infobox-table th, .infobox-table td {
+    padding: 10px;
+    border-bottom: 1px solid #1a1a1a;
+    text-align: left;
+}
+
+.infobox-table th { color: var(--main-red); width: 40%; }
+.danger-row { background: rgba(179, 0, 0, 0.15); color: #ff4d4d; }
+
+/* Таблицы в тексте */
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-family: var(--mono-font);
+    font-size: 13px;
+}
+
+.wiki-table th {
+    border-bottom: 2px solid var(--main-red);
+    padding: 12px;
+    text-align: left;
+    color: var(--main-red);
+}
+
+.wiki-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Заголовки */
+h2 {
+    border-bottom: 1px solid var(--dark-red);
+    padding-bottom: 10px;
+    margin-top: 50px;
+    color: var(--main-red);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+}
+
+/* Выделяем заголовки симптомов особым цветом при наведении */
+.nav-section a[href^="symptom-"]:hover {
+    color: #ff4d4d;
+    padding-left: 5px;
+    border-left: 2px solid var(--main-red);
+    transition: 0.2s;
+}
+
+/* --- ЭФФЕКТЫ ПРИ НАВЕДЕНИИ НА КАТЕГОРИИ --- */
+.nav-section a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавность для всех свойств */
+    position: relative;
+    border-left: 2px solid transparent; /* Заготовка под линию */
+    padding-left: 0;
+}
+
+.nav-section a:hover {
+    color: #ff4d4d !important; /* Ярко-красный при наведении */
+    background: rgba(255, 0, 0, 0.05); /* Еле заметный красный фон */
+    padding-left: 12px; /* Ссылка "отпрыгивает" вправо */
+    border-left: 2px solid var(--main-red); /* Появляется красная полоска слева */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5); /* Легкое свечение текста */
+}
+
+/* Добавим эффект для заголовков категорий (H4), чтобы они тоже реагировали */
+.nav-section h4 {
+    transition: 0.3s;
+    cursor: default;
+}
+
+.nav-section:hover h4 {
+    color: #fff;
+    letter-spacing: 2px; /* Заголовок чуть "расширяется" при наведении на секцию */
+}
+
+/* --- ПЛАВНОСТЬ ПЕРЕХОДА МЕЖДУ СТРАНИЦАМИ --- */
+
+/* Анимация для всего тела страницы при загрузке */
+body {
+    animation: pageIn 0.3s ease-out forwards;
+}
+
+/* Анимация для главного контейнера (чуть позже тела) */
+.main-wrapper {
+    animation: contentUp 0.6s ease-out 0.2s both;
+}
+
+/* Определение анимаций */
+@keyframes pageIn {
+    0% {
+        opacity: 0;
+        filter: brightness(0) blur(10px); /* Появление из темноты и расфокуса */
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1) blur(0);
+    }
+}
+
+@keyframes contentUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Контент немного "всплывает" снизу */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Эффект "мерцания" при клике (опционально) */
+.nav-links a:active, .nav-section a:active {
+    background: var(--main-red);
+    color: #000 !important;
+    transition: 0s;
+}
+
+/* Блок содержания как на Вики */
+.wiki-toc {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin: 20px 0;
+    display: inline-block;
+    min-width: 250px;
+}
+
+.toc-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+    padding-bottom: 5px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.wiki-toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.wiki-toc ul ul {
+    padding-left: 20px; /* Сдвиг для подразделов 2.1, 2.2 */
+}
+
+.wiki-toc a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 0.9em;
+    transition: 0.2s;
+}
+
+.wiki-toc a:hover {
+    color: var(--main-red);
+}
+
+/* Стиль для текста-ссылки внутри статьи */
+.article-body a {
+    color: #ff4d4d;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 0, 0, 0.3);
+}
+
+.article-body a:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+/* Стиль для алых ссылок без подчеркивания */
+.preamble a {
+    color: #ff0000;         /* Тот самый алый цвет */
+    text-decoration: none;  /* Убираем подчеркивание */
+    font-weight: bold;      /* Делаем жирным */
+    transition: 0.2s;       /* Плавный эффект при наведении */
+}
+
+/* Эффект при наведении (необязательно, но красиво) */
+.preamble a:hover {
+    color: #ff4d4d;         /* Чуть светлее при наведении */
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.6); /* Легкое свечение в стиле терминала */
+}
+
+/* ОБЩИЙ СТАНДАРТ ДЛЯ ВСЕХ БЛОКОВ (И левых, и правых) */
+
+.infobox, .infobox-left, .thumb-right, .thumb-left {
+
+    width: 300px;
+
+    background: rgba(30, 30, 30, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    padding: 10px;
+
+    font-size: 0.9em;
+
+    box-sizing: border-box; /* Чтобы паддинги не раздували ширину */
+
+}
+
+
+
+/* СТОРОНЫ (Только флоаты и отступы) */
+
+.infobox, .thumb-right {
+
+    float: right;
+
+    margin-left: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.infobox-left, .thumb-left {
+
+    float: left;
+
+    margin-right: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* КАРТИНКИ ВНУТРИ (Одинаково для всех) */
+
+.infobox img, .infobox-left img, .thumb-right img, .thumb-left img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+
+
+/* ПОДПИСИ И ШАПКИ */
+
+.infobox-header {
+
+    background: #3a4b63;
+
+    color: white;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    padding: 5px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.thumb-caption, .infobox-caption {
+
+    font-size: 0.8em;
+
+    text-align: center;
+
+    line-height: 1.3;
+
+    color: #ccc;
+
+    display: block;
+
+}
+
+/* ГАЛЕРЕЯ */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.gallery-item { text-align: center; }
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.gallery-item img:hover { border-color: var(--main-red); transform: scale(1.05); }
+
+/* МОДАЛЬНОЕ ОКНО */
+/* ГЛАВНЫЙ КОНТЕЙНЕР — ТЕПЕРЬ ОН ТОЧНО ВСЁ ЦЕНТРИРУЕТ */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10000;
+    left: 0; top: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    
+    /* Жесткая центрация */
+    display: none; /* Переключится на flex через JS */
+    flex-direction: column;
+    justify-content: center; /* Центр по вертикали */
+    align-items: center;     /* Центр по горизонтали */
+    padding: 0;
+    margin: 0;
+}
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto; 
+    
+    /* СМЕЩЕНИЕ ВНИЗ: подбери проценты (например, 2% или 5%), чтобы поймать идеальный глаз */
+    transform: translateY(3%); 
+}
+
+/* КАРТИНКА - ТЕПЕРЬ ОНА НЕ ВЫЛЕЗЕТ ЗА ЭКРАН */
+.modal-content {
+    display: block;
+    max-width: 85%; 
+    max-height: 60vh; 
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    /* Убираем все лишние флоаты и отступы */
+    margin: 0 auto; 
+}
+
+.image-info-panel {
+    width: 85%;
+    max-width: 800px;
+    margin: 20px auto 0 auto; /* Авто-отступы по бокам для центрации */
+    padding: 20px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* КНОПКИ - ОСТАВЛЯЕМ ABSOLUTE, НО С ВЫСОКИМ Z-INDEX */
+.modal-btn {
+    position: absolute;
+    z-index: 10005;
+    background: rgba(40, 40, 40, 0.8);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close { top: 20px; right: 20px; }
+.prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.info-grid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.download-zone { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-dl {
+    border: 1px solid var(--main-red);
+    color: var(--main-red);
+    padding: 5px 10px;
+    font-size: 11px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-dl:hover { background: var(--main-red); color: white; }
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        max-width: 95%; /* Почти вся ширина экрана */
+        max-height: 50vh; /* Половина высоты, чтобы влезло описание */
+    }
+
+    .image-info-panel {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Уменьшаем кнопки, чтобы не перекрывали фото */
+    .modal-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+    
+    .info-grid {
+        flex-direction: column; /* Данные в столбик */
+        gap: 5px;
+        font-size: 10px;
+    }
+}
+
+/* Контейнер для фото "как в Вики" */
+.thumb-right {
+    float: right;            /* Прижать вправо */
+    width: 250px;           /* Стандартная ширина как в Wiki */
+    margin: 0 0 15px 20px;  /* Отступы: снизу 15px, слева 20px (чтобы текст не лип) */
+    padding: 5px;
+    background: #1a1a1a;    /* Темный фон под фото */
+    border: 1px solid #333; /* Тонкая рамка */
+    font-size: 12px;        /* Шрифт подписи чуть меньше основного */
+    color: #ccc;            /* Цвет текста подписи */
+}
+
+.thumb-right img {
+    width: 100%;            /* Растянуть фото на всю ширину контейнера */
+    height: auto;
+    display: block;
+    cursor: zoom-in;        /* Чтобы было понятно, что можно нажать */
+}
+
+.thumb-caption {
+    padding: 8px 5px 3px 5px;
+    line-height: 1.3;
+    border-top: 1px solid #333;
+    margin-top: 5px;
+}
+
+/* Очистка обтекания (чтобы следующие заголовки не прыгали) */
+.article-body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 768px) {
+    /* Упрощаем отрисовку картинок в модалке для плавности */
+    .modal-content {
+        will-change: transform;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* Скрываем подписи в тексте на совсем маленьких экранах, чтобы не занимать место */
+    .thumb-caption {
+        font-size: 10px;
+        padding: 4px;
+    }
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.toc-toggle {
+    background: transparent;
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 2px 5px;
+    transition: 0.3s;
+}
+
+.toc-toggle:hover {
+    background: #ff0000;
+    color: #000;
+}
+
+/* Класс для скрытия списка */
+.toc-hidden #toc-list {
+    display: none;
+}
+
+/* Немного уменьшим само окно, когда оно свернуто */
+.toc-hidden {
+    width: fit-content !important;
+}
+
+/* Начальное скрытое состояние окна превью */
+#preview-box {
+    position: absolute;
+    width: 320px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    z-index: 9999;
+    color: #eee;
+    font-size: 14px;
+    pointer-events: none; /* Окно не мешает мышке, пока оно прозрачное */
+    
+    /* === АНИМАЦИЯ === */
+    opacity: 0; /* Полностью прозрачное */
+    visibility: hidden; /* Скрыто для взаимодействия, но место занимает (в DOM) */
+    transform: translateY(10px); /* Немного смещено вниз */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; /* Настройка плавности перехода */
+}
+
+/* Состояние, когда окно должно быть видно */
+#preview-box.is-visible {
+    opacity: 1; /* Полностью непрозрачное */
+    visibility: visible; /* Становится видимым */
+    transform: translateY(0); /* Возвращается в нормальное положение */
+}
+
+#preview-img {
+    width: 100%; /* Всегда растягиваем по ширине окна превью */
+    height: auto; /* Позволяем высоте подстраиваться автоматически под пропорции */
+    max-height: 250px; /* Ограничиваем максимальную высоту, чтобы не "выпала" за экран */
+    object-fit: contain; /* Картинка полностью видна внутри отведенной области, не обрезается */
+    background: #000; /* Если картинка узкая, по бокам будут черные полосы, а не пустота */
+    display: block; /* Убираем отступы снизу */
+}
+
+.preview-text {
+    padding: 15px;
+    line-height: 1.5;
+}
+
+#preview-loader {
+    padding: 20px;
+    text-align: center;
+    color: #888;
+}
+
+/* Настраиваем размер текста в инфобоксах и тамбах */
+.infobox *, .infobox-left *, .thumb-right *, .thumb-left * {
+    font-size: 14px !important; /* Было 16px, теперь 14px — это стандарт для доп. блоков */
+    line-height: 1.4 !important; /* Чуть плотнее межстрочный интервал */
+}
+
+/* Подписи к фото делаем еще чуть изящнее */
+.thumb-caption, .infobox-caption {
+    font-size: 12px !important; /* Компактный, но разборчивый размер */
+    color: #bbb !important;
+}
+
+/* Заголовок инфобокса (синяя шапка) */
+.infobox-header {
+    font-size: 15px !important;
+    padding: 6px !important;
+}
+

@@ -1,0 +1,309 @@
+:root {
+    --blood: #4a0000;
+    --decay: #1a1a1a;
+}
+
+body {
+    background: #000 !important;
+    color: #999;
+    /* Эффект старой, выгоревшей ЭЛТ-трубки */
+    filter: contrast(180%) brightness(0.7) saturate(0.2) sepia(0.2);
+    overflow-x: hidden;
+    cursor: none; /* Убираем курсор, чтобы усилить беспомощность */
+}
+
+/* Слой "Биологической Грязи" поверх всего */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/dust.png'); 
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: multiply;
+}
+
+/* Контейнер, который будет "дышать" */
+#main-viewport {
+    transition: transform 0.1s ease-out;
+    will-change: transform, filter;
+}
+
+
+@keyframes pulse-decay {
+    0%, 100% { transform: scale(1); filter: blur(0px); opacity: 1; }
+    50% { transform: scale(1.02) skewX(2deg); filter: blur(1px); opacity: 0.7; }
+}
+
+/* Эффект "Черной желчи" при скролле */
+.scroll-leak {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 0;
+    background: linear-gradient(to bottom, #000, transparent);
+    z-index: 9998;
+    pointer-events: none;
+}
+
+* { box-sizing: border-box; }
+
+.system-seizure {
+    background: #050505; /* Почти черный, но с оттенком */
+    color: #666;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Текстура "грязного стекла" */
+.organic-noise {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/dust.png');
+    opacity: 0.1;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.vignette {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+    z-index: 99;
+    pointer-events: none;
+}
+
+.viewport {
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    filter: url(#flesh-melt); /* Применяем плавление ко всему вьюпорту */
+}
+
+/* Стиль текста "зловещей долины" */
+.flesh-text {
+    font-size: 4rem;
+    color: #4a0000; /* Цвет запекшейся крови */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
+
+.data-grid {
+    border-left: 2px solid #222;
+    padding-left: 20px;
+}
+
+.entry-row { margin-bottom: 10px; }
+
+.warning-subtext {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+* { box-sizing: border-box; }
+
+.system-seizure {
+    background: #050505; /* Почти черный, но с оттенком */
+    color: #666;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Текстура "грязного стекла" */
+.organic-noise {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/dust.png');
+    opacity: 0.1;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.vignette {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+    z-index: 99;
+    pointer-events: none;
+}
+
+.viewport {
+    display: flex;
+    min-height: 100vh;
+    padding: 40px;
+    filter: url(#flesh-melt); /* Применяем плавление ко всему вьюпорту */
+}
+
+/* Стиль текста "зловещей долины" */
+.flesh-text {
+    font-size: 4rem;
+    color: #4a0000; /* Цвет запекшейся крови */
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
+
+.data-grid {
+    border-left: 2px solid #222;
+    padding-left: 20px;
+}
+
+.entry-row { margin-bottom: 10px; }
+.label { color: #333; font-weight: bold; }
+.val { color: #999; }
+
+.warning-subtext {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* Эффект выжженной пленки и царапин */
+.organic-noise::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 10%; width: 2px; height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    animation: scratch 0.3s infinite;
+}
+
+@keyframes scratch {
+    0% { left: 5%; opacity: 0; }
+    50% { left: 45%; opacity: 0.1; }
+    100% { left: 85%; opacity: 0; }
+}
+
+/* Эффект "залитых кровью" краев экрана */
+.blood-corners {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 150px 50px rgba(74, 0, 0, 0.9);
+    pointer-events: none;
+    z-index: 10001;
+    mix-blend-mode: multiply;
+    animation: pulse-vignette 10s infinite;
+}
+
+@keyframes pulse-vignette {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Текст, который "разрезает" экран */
+.slicing {
+    position: relative;
+    overflow: hidden;
+}
+
+.slicing::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(0, 900px, 0, 0);
+    animation: slice 2s infinite linear alternate-reverse;
+}
+
+@keyframes slice {
+    0% { clip: rect(10px, 9999px, 40px, 0); }
+    100% { clip: rect(80px, 9999px, 120px, 0); }
+}
+
+/* Основной белый текст с эффектом свечения мертвой лампы */
+.white-mode {
+    color: #ffffff !important;
+    text-shadow: 0 0 5px #fff, 0 0 10px rgba(255,255,255,0.5), 2px 2px 0px #ff0000;
+    filter: url(#glitch-slice);
+    letter-spacing: 2px;
+}
+
+/* Призрачный текст, который почти не виден */
+.ghost-text {
+    color: rgba(255, 255, 255, 0.03); /* Почти прозрачный */
+    transition: color 10s ease-in;
+}
+
+/* Эффект "загрязнения" экрана (вместо обычной зернистости) */
+.organic-noise {
+    background-image: 
+        url('https://www.transparenttextures.com/patterns/asfalt-dark.png'),
+        radial-gradient(circle, transparent 20%, #000 90%);
+    opacity: 0.6;
+    mix-blend-mode: exclusion; /* Это создаст очень неприятный визуальный эффект */
+}
+
+/* Вспышка "снафф-камеры" */
+#flash-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #fff;
+    z-index: 100000;
+    display: none;
+    mix-blend-mode: difference;
+}
+
+/* Полностью белый, слепящий текст */
+.white-mode, .flesh-text, .val, .label, p {
+    color: #ffffff !important;
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.9), 
+        0 0 20px rgba(255, 255, 255, 0.4);
+    filter: url(#glitch-slice) brightness(1.8);
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+}
+
+/* Эффект "грязного" выделения текста */
+::selection {
+    background: #ffffff;
+    color: #000000;
+    text-shadow: none;
+}
+
+/* Контейнер с дрожанием */
+.flesh-container {
+    padding: 10% 5%;
+    animation: jitter 0.03s infinite alternate;
+}
+
+@keyframes jitter {
+    0% { transform: translate(0); }
+    100% { transform: translate(1px, 0.5px); }
+}
+
+/* Вспышка снафф-камеры (белый кадр) */
+#flash-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #fff;
+    z-index: 99999;
+    display: none;
+    mix-blend-mode: difference;
+}
+
+/* Делаем фон максимально черным и глубоким */
+body {
+    background: #000 !important;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Добавь это в .system-seizure или body */
+body {
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translateZ(0); /* Аппаратное ускорение */
+}
+
+/* Оптимизация фильтров */
+.white-mode, .flesh-text {
+    will-change: filter, transform; /* Подсказка браузеру заранее */
+}
+
+/* Если зернистость слишком тяжелая, замедли её */
+.organic-noise {
+    pointer-events: none;
+    will-change: opacity;
+}

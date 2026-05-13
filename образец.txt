@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>PRION_SYSTEM // DATABASE_ENTRY</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="custom-background"></div>
+    <div class="vignette"></div>
+    <div class="main-wrapper">
+<header class="top-nav">
+    <div class="logo-wrapper">
+        <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+            <div class="logo-area">
+                <img src="/images/my-logo.png" alt="PRION_INDEX LOGO" style="height: 40px; width: auto; display: block;">
+            </div>
+            <div class="site-title">
+                <span class="main-name" style="font-weight: bold; font-family: 'JetBrains Mono', monospace;">PRION_INDEX</span>
+                <span class="sub-name" style="font-size: 0.7em; display: block; opacity: 0.6;">Global Research Database</span>
+            </div>
+        </a>
+    </div>
+    <div class="nav-links">
+        <a href="../index.html">ГЛАВНАЯ</a>
+        <a href="../archive.html">АРХИВ</a>
+        <a href="../contacts.html">КОНТАКТЫ</a>
+    </div>
+</header>
+
+    <div class="layout">
+        <aside class="wiki-nav">
+            <div class="search-container">
+                <input type="text" id="wiki-search" placeholder="ПОИСК ПО ВСЕЙ БАЗЕ...">
+                <div class="search-line"></div>
+            </div>
+
+		<div class="nav-section">
+	<a href="dis-prion.html">Прион — Что Это?</a>
+		</div>
+
+            <div class="nav-section">
+                <h4>РЕЕСТР ЗАБОЛЕВАНИЙ</h4>
+                <a href="dis-alpers.html">Болезнь Альперса</a>
+                <a href="../dis-kuru/dis-kuru.html">Болезнь Куру</a>
+                <a href="../dis-cjd/dis-cjd.html">Б-нь Крейтцфельдта — Якоба</a>
+                <a href="dis-vcjd.html">Вариантная БКЯ (vCJD)</a>
+                <a href="dis-gss.html">Синдром Герстмана — Штройсслера</a>
+                <a href="dis-vpspr.html">Прионопатия VPSPr</a>
+                <a href="dis-ffi.html">Фатальная семейная бессонница</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>СИМПТОМАТОЛОГИЯ</h4>
+                <a href="symp-agnosia.html">Агнозия</a>
+                <a href="symp-akinesia.html">Акинезия</a>
+                <a href="symp-ataxia.html">Атаксия</a>
+                <a href="symp-hallucinations.html">Галлюцинации</a>
+                <a href="symp-dementia.html">Деменция</a>
+                <a href="symp-dysarthria.html">Дизартрия</a>
+                <a href="symp-myoclonus.html">Миоклонус</a>
+                <a href="symp-insomnia.html">Фрагментация сна</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>МЕХАНИКА РЕПЛИКАЦИИ</h4>
+                <a href="mech-barrier.html">Видовой барьер</a>
+                <a href="mech-conform.html">Конформационный переход</a>
+                <a href="mech-nucleation.html">Нуклеация-полимеризация</a>
+                <a href="mech-prpc.html">Протеин PrP^C (Норма)</a>
+                <a href="mech-prpsc.html">Протеин PrP^Sc (Патоген)</a>
+                <a href="mech-folding.html">Фолдинг белков</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>БАЗА ШТАММОВ (BIO)</h4>
+                <a href="strain-bse.html">BSE (Коровье бешенство)</a>
+                <a href="strain-cwd.html">CWD (Олени-зомби)</a>
+                <a href="strain-fse.html">FSE (Кошачьи)</a>
+                <a href="strain-scrapie.html">Scrapie (Почесуха овец)</a>
+                <a href="strain-tme.html">TME (Норки)</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>МЕТОДЫ ДИАГНОСТИКИ</h4>
+                <a href="diag-biopsy.html">Биопсия мозга</a>
+                <a href="diag-mri.html">МРТ: Признак «Пульвинара»</a>
+                <a href="diag-rtquic.html">Тест RT-QuIC</a>
+                <a href="diag-csf.html">Белок 14-3-3 в ликворе</a>
+                <a href="diag-eeg.html">Электроэнцефалография</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>ПОПЫТКИ ЛЕЧЕНИЯ</h4>
+                <a href="treat-aso.html">Антисмысловые олигонуклеотиды</a>
+                <a href="treat-mab.html">Моноклональные антитела</a>
+                <a href="treat-pentosan.html">Пентозан полисульфат</a>
+                <a href="treat-poly.html">Политиофены</a>
+                <a href="treat-silencing.html">Сайленсинг гена PRNP</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>БИОБЕЗОПАСНОСТЬ</h4>
+                <a href="bio-autoclave.html">Автоклавирование</a>
+                <a href="bio-bsl4.html">Протоколы BSL-4</a>
+                <a href="bio-incineration.html">Инсинерация (Сжигание)</a>
+                <a href="bio-hydrolysis.html">Щелочной гидролиз</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>ГЕОГРАФИЯ ВСПЫШЕК</h4>
+                <a href="geo-uk.html">Великобритания (BSE)</a>
+                <a href="geo-italy.html">Италия (FFI)</a>
+                <a href="geo-usa.html">Северная Америка (CWD)</a>
+                <a href="geo-png.html">Папуа — Новая Гвинея (Kuru)</a>
+            </div>
+
+            <div class="nav-section">
+                <h4>ПЕРСОНАЛИИ</h4>
+                <a href="sci-aguzzi.html">Агуцци, Адриано</a>
+                <a href="sci-alper.html">Альпер, Тиква</a>
+                <a href="sci-weissmann.html">Вайсман, Чарльз</a>
+                <a href="sci-gajdusek.html">Гайдузек, Карлтон</a>
+                <a href="sci-griffith.html">Гриффит, Джон</a>
+                <a href="sci-collinge.html">Коллиндж, Джон</a>
+                <a href="sci-prusiner.html">Прузинер, Стенли</a>
+            </div>
+        </aside>
+
+<main class="main-content">
+    <article class="article-container">
+        <h1>Болезнь Крейтцфельдта — Якоба</h1>
+
+        <div class="article-body">
+            <aside class="infobox">
+                <div class="infobox-header">Болезнь Крейтцфельдта — Якоба</div>
+                <img src="Spongiform_degeneration_in_Creutzfeldt-Jakob_disease.jpg" alt="Больной куру">
+                <span class="infobox-caption">Фотография, сделанная световым микроскопом, показывающая губчатую дегенерацию в коре головного мозга пациента, умершего от болезни Кройцфельдта-Якоба (CJD). Срез ткани был погружён в парафиновый воск, разрезан толщиной примерно 5–10 микронов и окрашён гематоксилином и эозином (H&E). Можно увидеть несколько крупных пирамидальных нейронов, а также ядра глиальных клеток. Шкала в нижнем правом углу отражает расстояние 30 микрон (0,03 миллиметра).</span>
+                <table class="infobox-table">
+                    <tr><th>МКБ-11:</th><td>8E02.0</td></tr>
+                    <tr><th>МКБ-10:</th><td>A81.0 F02.1</td></tr>
+                    <tr><th>МКБ-10-КМ:</th><td>	A81.00 и A81.0</td></tr>
+                    <tr><th>МКБ-9:</th><td>046.1</td></tr>
+                    <tr><th>МКБ-9-КМ:</th><td>046.1 и 046.19</td></tr>
+                    <tr><th>OMIM:</th><td>123400</td></tr>
+                    <tr><th>DiseasesDB:</th><td>3166</td></tr>
+                    <tr><th>MedlinePlus:</th><td>000788</td></tr>
+                    <tr><th>MeSH:</th><td>D007562</td></tr>
+                </table>
+            </aside>
+
+            <p><i>Не следует путать с коровьим бешенством — прионным заболеванием крупного рогатого скота.</i><br><br>Болезнь Кре́йтцфельдта — Я́коба (или Болезнь Кройцфе́льдта — Я́коба; синонимы: псевдосклероз спастический, синдром кортико-стриоспинальной дегенерации, трансмиссивная спонгиоформная энцефалопатия, иногда ошибочно называемая «коровьим бешенством») — редкое прогрессирующее прионное нейродегенеративное заболевание коры большого мозга, базальных ганглиев и спинного мозга. Считается разновидностью губчатой энцефалопатии (группы заболеваний, вызываемых особыми инфекционными агентами — прионами). На сегодняшний день заболевание неизлечимо, летальный исход наступает в 100 % случаев. Доступно только симптоматическое лечение, не влияющее на прогрессирование болезни. Диагностика заболевания затруднена из-за его редкости и отсутствия специфических симптомов.</p>
+
+	<div class="wiki-toc" id="toc">
+ 	   <div class="toc-title">
+ 	       Содержание 
+<button class="toc-toggle" id="toc-btn">СКРЫТЬ</button>
+  	  </div>
+ 	   <ul id="toc-list">
+                    <li><a href="#istoria">1 История</a></li>
+                    <li><a href="#epidemiology">2 Эпидемиология</a>
+                        <ul>
+                            <li><a href="#prion">2.1 Прион</a></li>
+                            <li><a href="#transmission">2.2 Передача</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#pathogenesis">3 Патогенез</a></li>
+                    <li><a href="#gallery">4 Галерея</a></li>
+                    <li><a href="#notes">5 Примечания</a></li>
+                </ul>
+            </div>
+
+            <h2 id="istoria">История</h2>
+            <p>Текст о стадиях болезни...</p>
+
+            <h2 id="epidemiology">Эпидемиология</h2>
+            <h3 id="prion">Прион</h3>
+            <p>Информация об инфекционном агенте <a href="prion-base.html">PrP<sup>Sc</sup></a>...</p>
+
+            <h3 id="transmission">Передача</h3>
+            <p>Описание ритуального каннибализма...</p>
+
+            <h2 id="pathogenesis">Патогенез</h2>
+            <p>Описание разрушения нейронов...</p>
+
+            <h2 id="gallery">Галерея</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="Prion_subdomain-colored_sec_structure.png"><img src="Prion_subdomain-colored_sec_structure.png"></a>
+                    <p>Субдомен нормально свернутого прионного белка PrPC — Остатки 125—228. Обратите внимание на наличие альфа-спиралей (синих)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="Cerebellum_of_kuru_victim.png"><img src="Cerebellum_of_kuru_victim.png"></a>
+                    <p>Мозжечок пациента с болезнью куру</p>
+                </div>
+            </div>
+
+            <h2 id="notes">Примечания</h2>
+            <p>Список литературы и ссылок.</p>
+        </div>
+    </article>
+</main>
+    </div>
+</div>
+
+    <script>
+    // --- ПРОВЕРКА КНОПКИ СОДЕРЖАНИЯ ---
+    const tocBtn = document.getElementById('toc-btn');
+    const tocContainer = document.getElementById('toc');
+
+    if (tocBtn && tocContainer) {
+        tocBtn.onclick = function() {
+            tocContainer.classList.toggle('toc-hidden');
+            this.textContent = tocContainer.classList.contains('toc-hidden') ? 'показать' : 'скрыть';
+        };
+    }
+    // --- ДАЛЬШЕ ТВОЙ РАБОЧИЙ КОД ГАЛЕРЕИ ---
+
+        // ТУТ ТВОЙ СУЩЕСТВУЮЩИЙ СКРИПТ ПОИСКА (который ты кидал выше)
+        document.getElementById('wiki-search').addEventListener('keyup', function() {
+            // ... (код поиска) ...
+        });
+
+// --- ОБНОВЛЕННЫЙ СКРИПТ ГАЛЕРЕИ ---
+        let currentImgIdx = 0;
+        // Собираем картинки И из текста, И из галереи (grid)
+        const images = document.querySelectorAll('.article-body img, .gallery-grid img, .infobox img'); 
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const captionText = document.getElementById("modal-caption");
+        const externalLink = document.getElementById("external-url");
+
+        images.forEach((img, index) => {
+            img.style.cursor = "zoom-in";
+            
+            // ГЛАВНОЕ ИСПРАВЛЕНИЕ: используем addEventListener и e.preventDefault()
+            img.addEventListener('click', function(e) {
+                e.preventDefault(); // Запрещаем открывать в новой вкладке
+                e.stopPropagation(); // Не даем ссылке-родителю сработать
+                
+                currentImgIdx = index;
+                modal.style.display = "flex"; // Используем flex для центрации, которую мы настраивали
+                updateModal();
+                return false; // Дополнительная блокировка
+            });
+
+            // Если картинка внутри ссылки <a>, блокируем и саму ссылку
+            if (img.closest('a')) {
+                img.closest('a').onclick = (e) => e.preventDefault();
+            }
+        });
+
+        function updateModal() {
+            const img = images[currentImgIdx];
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt || "ОБЪЕКТ: DATA_RECORD_UNKNOWN"; 
+            
+            // Обновляем кнопки скачивания и инфо
+            if(document.getElementById("dl-raw")) document.getElementById("dl-raw").href = img.src;
+            externalLink.href = img.src;
+
+            // Расчет размеров (чтобы не было прочерков)
+            const tempImg = new Image();
+            tempImg.src = img.src;
+            tempImg.onload = function() {
+                if(document.getElementById("img-res")) 
+                    document.getElementById("img-res").innerHTML = this.width + " x " + this.height;
+                let sizeMB = Math.round((this.width * this.height * 3) / 1048576 * 10) / 10;
+                if(document.getElementById("img-size"))
+                    document.getElementById("img-size").innerHTML = sizeMB + " MB (est.)";
+            };
+        }
+
+// Управление (кнопки)
+        const closeBtn = document.querySelector(".close");
+        if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
+
+        const nextBtn = document.querySelector(".next");
+        if (nextBtn) {
+            nextBtn.onclick = (e) => {
+                e.stopPropagation();
+                currentImgIdx = (currentImgIdx + 1) % images.length;
+                updateModal();
+            };
+        }
+
+        const prevBtn = document.querySelector(".prev");
+        if (prevBtn) {
+            prevBtn.onclick = (e) => {
+                e.stopPropagation();
+                currentImgIdx = (currentImgIdx - 1 + images.length) % images.length;
+                updateModal();
+            };
+        }
+window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
+</script>
+
+<script src="../script.js"></script>
+
+</body>
+</html>

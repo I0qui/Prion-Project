@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>PRION_INDEX // STRAINS_DATABASE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="custom-background"></div>
+<div class="vignette"></div>
+
+<div class="main-wrapper">
+    <header class="top-nav">
+        <div class="logo-wrapper">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                <div class="logo-area">
+                    <img src="images/my-logo.png" style="height: 40px; display: block;">
+                </div>
+                <div class="site-title">
+                    <span class="main-name">PRION_INDEX</span>
+                    <span class="sub-name">Global Research Database</span>
+                </div>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">ГЛАВНАЯ</a>
+            <a href="archive.html">АРХИВ РАБОТ</a>
+            <a href="strains.html" class="active">БАЗА ШТАММОВ</a>
+            <a href="../contacts/contacts.html">КОНТАКТЫ</a>
+        </div>
+        <div class="system-id">THREAT_LEVEL: CRITICAL</div>
+    </header>
+
+    <div class="layout">
+        <aside class="wiki-nav">
+             <div class="nav-section">
+                <h4>ФИЛЬТР ШТАММОВ</h4>
+                <a href="#human">Человеческие (hPrP)</a>
+                <a href="#zoonotic">Зоонозные (vPrP)</a>
+                <a href="#synthetic">Синтетические (sPrP)</a>
+                <hr style="border: 0; border-top: 1px solid #333; margin: 15px 0;">
+                <a href="#protocols">Протоколы дезактивации</a>
+            </div>
+            <div class="nav-section" style="margin-top: 30px; font-size: 11px; color: #555;">
+                <p>STATUS: DATABASE_CONNECTED</p>
+                <p>UPTIME: 99.9%</p>
+                <p>ENCRYPTION: AES-256</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="hero-section">
+                <div class="alert-banner">Раздел: База классифицированных патогенных штаммов</div>
+                <h1>РЕЕСТР КОНФОРМАЦИОННЫХ АГЕНТОВ</h1>
+                
+                <p class="description">
+                    Данный реестр содержит систематизированные данные о прионных штаммах, задокументированных в ходе клинических и полевых исследований. Информация предназначена исключительно для персонала с уровнем допуска 3+. Все штаммы обладают 100% летальностью при отсутствии своевременной диагностики.
+                </p>
+
+                <!-- ЧЕЛОВЕЧЕСКИЕ ШТАММЫ -->
+                <h2 id="human" style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 40px;">[01] ЧЕЛОВЕЧЕСКИЕ ПРИОННЫЕ БОЛЕЗНИ</h2>
+                <div class="content-grid">
+                    <div class="text-block">
+                        <h3>sCJD (Sporadic Creutzfeldt-Jakob)</h3>
+                        <p>Наиболее распространенная форма. Возникает спонтанно вследствие соматической мутации или спонтанного изменения конформации белка PrP. Характеризуется стремительным прогрессированием деменции.</p>
+                        <ul style="font-size: 13px; color: #888; margin-top: 10px;">
+                            <li>Период инкубации: от 5 до 20 лет.</li>
+                            <li>Клиническая фаза: 4-6 месяцев.</li>
+                            <li>Симптоматика: миоклонус, атаксия, акинетический мутизм.</li>
+                        </ul>
+                        <div style="font-size: 11px; font-family: 'JetBrains Mono'; margin-top: 10px; color: #ff0000;">
+                            LETHALITY: 100% | RISK_CODE: ALPHA-1
+                        </div>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>vCJD (Variant Creutzfeldt-Jakob)</h3>
+                        <p>Вариантная форма, связанная с употреблением в пищу мяса зараженного КРС (BSE). Поражает преимущественно молодых лиц. Отличается наличием характерных "флоридных" бляшек в ткани мозга.</p>
+                        <ul style="font-size: 13px; color: #888; margin-top: 10px;">
+                            <li>Накопление в лимфоидной ткани (миндалины, селезенка).</li>
+                            <li>Высокий риск передачи через хирургические инструменты.</li>
+                        </ul>
+                        <div style="font-size: 11px; font-family: 'JetBrains Mono'; margin-top: 10px; color: #ff0000;">
+                            LETHALITY: 100% | ORIGIN: ZOONOTIC_CROSSOVER
+                        </div>
+                    </div>
+
+                    <div class="text-block">
+                        <h3>FFI (Fatal Familial Insomnia)</h3>
+                        <p>Фатальная семейная бессонница. Редкое генетическое заболевание, поражающее таламус. Полная утрата способности к сну ведет к быстрому истощению нервной системы.</p>
+                        <div style="font-size: 11px; font-family: 'JetBrains Mono'; margin-top: 10px; color: #ff0000;">
+                            GENETIC: PRNP D178N | INCURABLE
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ЗООНОЗНЫЕ ШТАММЫ -->
+                <h2 id="zoonotic" style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 60px;">[02] ЗООНОЗНЫЕ И ЭКОСИСТЕМНЫЕ УГРОЗЫ</h2>
+                <div class="content-grid">
+                    <div class="text-block highlight-red">
+                        <h3 style="color: #ff0000;">BSE (Bovine Spongiform Encephalopathy)</h3>
+                        <p>Классический штамм типа C. Способен преодолевать межвидовой барьер. Обладает аномальной термостабильностью (выдерживает стандартное автоклавирование).</p>
+                        <div style="font-size: 11px; font-family: 'JetBrains Mono'; margin-top: 10px;">
+                            VULNERABILITY: UNKNOWN | STRAIN: TYPE-C
+                        </div>
+                    </div>
+
+                    <div class="text-block highlight-red">
+                        <h3 style="color: #ff0000;">CWD (Chronic Wasting Disease)</h3>
+                        <p>Штамм, поражающий копытных. Обнаружен в почве, воде и растениях на местах выпаса. Передача происходит через слюну, мочу и кал животных. Потенциал перехода к человеку изучается.</p>
+                        <div style="font-size: 11px; font-family: 'JetBrains Mono'; margin-top: 10px;">
+                            INFECTIVITY: EXTREME | PERSISTENCE: 10+ YEARS
+                        </div>
+                    </div>
+                </div>
+
+                <!-- СИНТЕТИЧЕСКИЕ ШТАММЫ -->
+                <h2 id="synthetic" style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 60px;">[03] СИНТЕТИЧЕСКИЕ И ЛАБОРАТОРНЫЕ АГЕНТЫ</h2>
+                <div class="content-grid">
+                    <div class="text-block" style="border: 1px dashed #ff0000;">
+                        <h3 style="color: #ff0000;">P-73_HYBRID (Classified)</h3>
+                        <p>Экспериментальный рекомбинантный штамм. Создан в целях изучения механизмов ускоренной полимеризации бета-листов. Обладает сокращенным инкубационным периодом (до 14 суток в модельных организмах).</p>
+                        <p style="background: rgba(255,0,0,0.1); padding: 5px; font-size: 12px; margin-top: 10px;">
+                            ВНИМАНИЕ: Работа с P-73 разрешена только в боксах BSL-4. При утечке — протокол "ZERO".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ПРОТОКОЛЫ -->
+                <h2 id="protocols" style="border-bottom: 1px solid #333; padding-bottom: 10px; margin-top: 60px;">МЕРЫ ПРОТИВОДЕЙСТВИЯ</h2>
+                <div class="text-block" style="background: rgba(255,255,255,0.03);">
+                    <p>Стандартные методы дезинфекции (спирт, формалин, УФ) **неэффективны**. Для полной инактивации штаммов требуется:</p>
+                    <ul style="margin-top: 10px; line-height: 1.8;">
+                        <li>Обработка 2М раствором NaOH в течение 1 часа.</li>
+                        <li>Автоклавирование при 134°C (3 бар) в течение 18-30 минут.</li>
+                        <li>Полное сжигание (инсинерация) биоматериала при температуре >1000°C.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer style="margin-top: 80px; padding: 20px; border-top: 1px solid #222; text-align: center; font-size: 11px; color: #444;">
+        PRION_INDEX © 2026 // NO_RIGHTS_RESERVED // EYES_ONLY
+    </footer>
+</div>
+
+</body>
+</html>
